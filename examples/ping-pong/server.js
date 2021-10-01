@@ -4,8 +4,10 @@ function beforeOffer(peerConnection) {
   const dataChannel = peerConnection.createDataChannel('ping-pong');
 
   function onMessage({ data }) {
-    if (data === 'ping') {
-      dataChannel.send('pong');
+    if (data) {
+//      console.log('received something');
+      console.log('Received client REAL IP:' + JSON.stringify(data));
+//      dataChannel.send('pong');
     }
   }
 
